@@ -1,0 +1,93 @@
+/* =====================================================================
+   Who We Are — page-specific styles (shared tokens live in style.css)
+   ===================================================================== */
+
+/* ---------- Our role ---------- */
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,7vw,120px);align-items:start}
+.about-copy{display:grid;gap:24px;padding-top:clamp(0px,2vw,28px)}
+.about-copy p{font-size:clamp(17px,1.5vw,21px);line-height:1.6;color:var(--muted);letter-spacing:-.01em;text-wrap:pretty}
+.about-copy strong{color:var(--ink);font-weight:600}
+
+/* ---------- Vision ---------- */
+.vision{display:flex;flex-direction:column;align-items:center;text-align:center}
+.vision-quote{margin-top:28px;max-width:1040px}
+.vision-quote p{
+  font-family:'Inter Display','Inter',system-ui,sans-serif;font-variation-settings:'opsz' 32;
+  font-size:clamp(28px,3.6vw,50px);line-height:1.14;letter-spacing:-.03em;font-weight:300;color:var(--navy);text-wrap:balance;
+}
+.vision-quote p::before{content:"“";color:var(--red)}
+.vision-quote p::after{content:"”";color:var(--red)}
+.vision-quote b{font-weight:600}
+.vision-means{
+  margin-top:clamp(36px,4vw,56px);max-width:620px;padding:24px 28px;border-radius:20px;
+  background:var(--mist);border:1px solid var(--line);text-align:left;
+}
+.vision-means small{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.vision-means p{margin-top:8px;font-size:15px;line-height:1.7;color:var(--muted)}
+
+/* ---------- Mission ---------- */
+.missions{margin-top:clamp(48px,6vw,80px);list-style:none;border-top:1px solid var(--line)}
+.mission{
+  display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,300px);gap:clamp(20px,3vw,48px);align-items:start;
+  padding:clamp(28px,3vw,40px) 0;border-bottom:1px solid var(--line);position:relative;
+}
+.mission::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease-out)}
+.mission:hover::before{transform:scaleX(1)}
+.m-no{
+  font-family:'Inter Display','Inter',sans-serif;font-variation-settings:'opsz' 32;
+  font-size:clamp(36px,3.6vw,52px);font-weight:300;letter-spacing:-.04em;line-height:1;color:var(--soft);
+  transition:color .35s;
+}
+.mission:hover .m-no{color:var(--red)}
+.m-body h3{font-size:clamp(20px,1.9vw,26px);font-weight:600;letter-spacing:-.02em;line-height:1.2;color:var(--navy)}
+.m-official{margin-top:10px;font-size:14px;line-height:1.6;font-style:italic;color:var(--soft);max-width:60ch}
+.m-means{margin-top:10px;font-size:15px;line-height:1.65;color:var(--muted);max-width:56ch}
+.m-tags{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.m-body .link-arrow{margin-top:18px}
+.m-proof{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 24px}
+.m-proof small{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.m-proof b{
+  display:block;margin-top:10px;font-family:'Inter Display','Inter',sans-serif;font-variation-settings:'opsz' 32;
+  font-size:clamp(32px,3vw,44px);font-weight:700;letter-spacing:-.045em;line-height:1;color:var(--navy);
+}
+.m-proof p{margin-top:8px;font-size:14px;line-height:1.6;color:var(--muted)}
+
+/* ---------- How we work ---------- */
+.principles{margin-top:clamp(48px,6vw,80px);list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.principle{
+  display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px 26px 30px;
+  transition:transform .4s var(--ease-out),box-shadow .4s var(--ease-out);
+}
+.principle:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(32,43,63,.4)}
+.pr-name{align-self:flex-start;font-size:12px;font-weight:600;border-radius:999px;padding:4px 10px;background:#fdecea;color:var(--red)}
+.principle h3{margin-top:20px;font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.3;color:var(--navy)}
+.principle p{margin-top:auto;padding-top:22px;font-size:14px;line-height:1.6;color:var(--muted)}
+.principle p small{display:block;margin-bottom:6px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+
+/* ---------- Rooted in Indonesia ---------- */
+.rooted{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,96px);align-items:center}
+.local-facts{margin-top:32px;list-style:none;display:grid;gap:14px}
+.local-facts li{padding-left:16px;border-left:2px solid var(--red);font-size:14px;line-height:1.6;color:var(--muted)}
+.local-facts b{display:block;font-size:15px;color:var(--navy)}
+.sectors{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.sector{background:var(--tile);border-radius:22px;padding:26px;transition:background .4s var(--ease-out),transform .4s var(--ease-out),box-shadow .4s var(--ease-out)}
+.sector:hover{background:#fff;transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(32,43,63,.4)}
+.sector h3{margin-top:18px;font-size:17px;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+.sector p{margin-top:8px;font-size:14px;line-height:1.6;color:var(--muted)}
+
+
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .principles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mission{grid-template-columns:72px minmax(0,1fr)}
+  .m-proof{grid-column:2}
+}
+@media (max-width:860px){
+  .about,.rooted{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .mission{grid-template-columns:1fr;gap:12px}
+  .m-proof{grid-column:auto}
+  .principles,.sectors{grid-template-columns:1fr}
+}

@@ -1,0 +1,5 @@
+# Internal working files: not part of the public site
+docs/
+tools/
+*.md
+.gitignore

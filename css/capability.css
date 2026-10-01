@@ -1,0 +1,84 @@
+/* =====================================================================
+   Shared capability (Tier A) pages — built by tools/build_capabilities.py
+   Uses the hero, mock, steps, roles and picker pieces from service.css
+   ===================================================================== */
+
+/* "Available in" badges */
+.avail-row{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.avail-row small{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.avail{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border-radius:999px;background:#fff;border:1px solid var(--line);
+  font-size:13px;font-weight:500;color:var(--navy);text-decoration:none;transition:border-color .3s,color .3s}
+.avail:hover{border-color:var(--red);color:var(--red)}
+.avail .code{border:0;background:var(--mist)}
+
+/* Benefits */
+.benefits{margin-top:clamp(48px,6vw,80px);list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.benefit{display:flex;flex-direction:column}
+.benefit-visual{display:grid;place-items:center;padding:28px 22px;border-radius:22px;background:var(--tile);min-height:220px}
+.benefit-visual .mock{width:100%;max-width:320px}
+.benefit h3{margin-top:22px;font-size:clamp(18px,1.6vw,22px);font-weight:600;letter-spacing:-.02em;line-height:1.25;color:var(--navy)}
+.benefit p{margin-top:8px;font-size:15px;line-height:1.65;color:var(--muted)}
+
+/* Available in services */
+.av-grid{margin-top:clamp(40px,5vw,64px);list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.av-grid.av-1{grid-template-columns:minmax(0,760px)}
+.av-grid.av-3 .av-card:first-child{grid-row:span 2}
+.av-card{display:flex;flex-direction:column;padding:28px;border-radius:24px;background:#fff;border:1px solid var(--line)}
+.av-head{display:flex;align-items:center;gap:14px}
+.av-head img{width:48px;height:48px;object-fit:contain;flex:none}
+.av-head h3{margin-top:6px;font-size:19px;font-weight:600;letter-spacing:-.015em;color:var(--navy)}
+.av-role{margin-top:16px;font-size:15px;line-height:1.65;color:var(--muted)}
+.av-card > small{margin-top:20px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.av-kids{margin-top:10px;list-style:none;display:grid;gap:8px}
+.av-kids li{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:10px 14px;border-radius:12px;background:var(--mist)}
+.av-kids b{font-size:14px;font-weight:600;color:var(--navy)}
+.av-moment{margin-top:18px;font-size:14px;line-height:1.6;color:var(--navy);padding-left:14px;border-left:2px solid var(--red)}
+.av-moment em{display:block;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.av-card .link-arrow{margin-top:auto;padding-top:22px}
+
+/* How it works per service (tabs) */
+#how .tabs{margin-top:40px}
+.how-panels{margin-top:8px}
+.how-panel[hidden]{display:none}
+.how-panel .steps{margin-top:24px}
+.how-panel.enter .step{animation:copyIn .6s var(--ease-out) both}
+.how-panel.enter .step:nth-child(2){animation-delay:.06s}
+.how-panel.enter .step:nth-child(3){animation-delay:.12s}
+
+/* Use cases: service label */
+.role > .code{align-self:flex-start;margin-bottom:14px}
+
+/* Integrations */
+.integrations{margin-top:clamp(40px,5vw,64px);list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.integrations li{padding:24px;border-radius:20px;border:1px solid var(--line);background:#fff}
+.integrations b{font-size:16px;font-weight:600;color:var(--navy)}
+.integrations p{margin-top:8px;font-size:14px;line-height:1.6;color:var(--muted)}
+
+/* Proof: usage tiles */
+.usage-tiles{margin-top:clamp(32px,4vw,48px);list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.usage-tiles li{padding:28px;border-radius:24px;background:var(--navy);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.usage-tiles li::before{content:"";position:absolute;right:-30%;top:-50%;width:90%;aspect-ratio:1;z-index:-1;background:radial-gradient(closest-side,rgba(228,35,19,.28),transparent)}
+.usage-tiles .code{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#d0d6e0}
+.usage-tiles b{display:block;margin-top:22px;font-family:'Inter Display','Inter',sans-serif;font-variation-settings:'opsz' 32;font-size:clamp(36px,3.6vw,52px);font-weight:700;letter-spacing:-.045em;line-height:1}
+.usage-tiles p{margin-top:10px;font-size:14px;line-height:1.55;color:#b5bfcd}
+#proof .svc-story + .usage-tiles{margin-top:16px}
+
+/* Service picker */
+.picker{margin-top:clamp(40px,5vw,64px);grid-template-columns:repeat(4,minmax(0,1fr))}
+.picker.picker-1{grid-template-columns:minmax(0,420px)}
+.picker.picker-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.picker.picker-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+@media (max-width:1024px){
+  .benefits,.integrations,.usage-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .picker,.picker.picker-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .av-grid{grid-template-columns:1fr}
+  .av-grid.av-3 .av-card:first-child{grid-row:auto}
+}
+@media (max-width:640px){
+  .benefits,.integrations,.usage-tiles,.picker,.picker.picker-2,.picker.picker-3{grid-template-columns:1fr}
+}
+.roles.uses{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:640px){.roles.uses{grid-template-columns:1fr}}
